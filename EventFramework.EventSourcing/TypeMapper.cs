@@ -11,6 +11,7 @@ public static class TypeMapper
             name = type.FullName ?? throw new Exception("No type name??");
         if (EventTypes.ContainsKey(name))
             throw new InvalidOperationException($"'{type}' is already mapped to the event name: {EventTypes[name]}");
+        // oops
         EventNames[type] = name;
         EventTypes[name] = type;
     }

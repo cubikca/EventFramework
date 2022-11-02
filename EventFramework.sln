@@ -5,6 +5,14 @@ VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventFramework.EventSourcing", "EventFramework.EventSourcing\EventFramework.EventSourcing.csproj", "{DC2DBF8F-9EA9-4D7F-83BE-9678A17CF06D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventFramework.SharedKernel", "EventFramework.SharedKernel\EventFramework.SharedKernel.csproj", "{90F903B5-8286-4DA5-85BD-31B1055F3CB9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventFramework.MongoDB", "EventFramework.MongoDB\EventFramework.MongoDB.csproj", "{C2D980F1-143E-4473-AD90-5F4E041F1292}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventFramework.Service", "EventFramework.Service\EventFramework.Service.csproj", "{9ABF1CD6-D27F-4C15-AFA8-5F578012E3B5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventFramework.Kafka", "EventFramework.Kafka\EventFramework.Kafka.csproj", "{06694BE7-508C-42C7-B4FA-D48D169847FA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -18,5 +26,21 @@ Global
 		{DC2DBF8F-9EA9-4D7F-83BE-9678A17CF06D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DC2DBF8F-9EA9-4D7F-83BE-9678A17CF06D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DC2DBF8F-9EA9-4D7F-83BE-9678A17CF06D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{90F903B5-8286-4DA5-85BD-31B1055F3CB9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{90F903B5-8286-4DA5-85BD-31B1055F3CB9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{90F903B5-8286-4DA5-85BD-31B1055F3CB9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{90F903B5-8286-4DA5-85BD-31B1055F3CB9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C2D980F1-143E-4473-AD90-5F4E041F1292}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C2D980F1-143E-4473-AD90-5F4E041F1292}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C2D980F1-143E-4473-AD90-5F4E041F1292}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C2D980F1-143E-4473-AD90-5F4E041F1292}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9ABF1CD6-D27F-4C15-AFA8-5F578012E3B5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9ABF1CD6-D27F-4C15-AFA8-5F578012E3B5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9ABF1CD6-D27F-4C15-AFA8-5F578012E3B5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9ABF1CD6-D27F-4C15-AFA8-5F578012E3B5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{06694BE7-508C-42C7-B4FA-D48D169847FA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{06694BE7-508C-42C7-B4FA-D48D169847FA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{06694BE7-508C-42C7-B4FA-D48D169847FA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{06694BE7-508C-42C7-B4FA-D48D169847FA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

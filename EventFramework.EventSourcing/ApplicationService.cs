@@ -48,8 +48,11 @@ public abstract class ApplicationService<T> where T : AggregateRoot<T>
             {
                 var aggregateId = getAggregateId(ev);
                 var aggregate = await Store.Load(aggregateId);
-                updater(aggregate, ev);
-                await Store.Save(aggregate);
+                if (aggregate != null)
+                {
+                    updater(aggregate, ev);
+                    await Store.Save(aggregate);
+                }
             });
     }
 }

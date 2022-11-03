@@ -2,6 +2,7 @@ namespace EventFramework.EventSourcing;
 
 public interface ICheckpointStore
 {
-    Task<ulong?> GetCheckpoint();
-    Task StoreCheckpoint(ulong? position);
+    // all null if the checkpoint doesn't exist
+    Task<(string?, int?, long?)> GetCheckpoint();
+    Task StoreCheckpoint(string topic, int partition, long offset);
 }

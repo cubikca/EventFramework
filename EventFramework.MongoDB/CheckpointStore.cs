@@ -1,4 +1,5 @@
 using EventFramework.EventSourcing;
+using EventFramework.SharedKernel;
 using MongoDB.Driver;
 using MongoDB.Driver.Linq;
 
@@ -17,19 +18,21 @@ public class CheckpointStore : ICheckpointStore
         _checkpointName = checkpointName;
     }
     
-    public async Task<ulong?> GetCheckpoint()
+    public async Task<(string?, int?, long?)> GetCheckpoint()
     {
         var checkpoints = _mongo.GetDatabase(_databaseName).GetCollection<Checkpoint>(_checkpointName);
         var checkpoint = await checkpoints.AsQueryable().FirstOrDefaultAsync(c => c.Id == _checkpointName);
-        return checkpoint?.Position ?? 0UL;
+        return (checkpoint?.Topic, checkpoint?.Partition, checkpoint?.Offset);
     }
 
-    public async Task StoreCheckpoint(ulong? position)
+    public async Task StoreCheckpoint(string topic, int partition, long offset)
     {
         var checkpoints = _mongo.GetDatabase(_databaseName).GetCollection<Checkpoint>(_checkpointName);
         var checkpoint = await checkpoints.AsQueryable().SingleOrDefaultAsync(c => c.Id == _checkpointName);
         checkpoint ??= new Checkpoint { Id = _checkpointName };
-        checkpoint.Position = position;
+        checkpoint.Topic = topic;
+        checkpoint.Partition = partition;
+        checkpoint.Offset = offset;
         await checkpoints.ReplaceOneAsync(c => c.Id == _checkpointName, checkpoint,
             new ReplaceOptions { IsUpsert = true });
     }
